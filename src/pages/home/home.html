@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Hogaria, Encuentra Tu Hogar
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="page-home" padding>
+  Bienvenido a Hogaria
+
+  <form [(formGroup)]="data" #loginForm="ngForm" id="login-form">
+    <ion-list inset>
+      Inicia Sesiòn y encuentra tu hogar ideal!
+      <ion-item>
+        <ion-label floating>Correo</ion-label>
+        <ion-input formControlName="username" type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+
+
+
+
+
+<div class="btn-container">
+  <button ion-button block (click)="login()" form="login-from" id="login-form">Login
+   </button>
+  <button class="btn-right" float-right ion-button> Acceder
+   </button>
+  <button class="btn-left" float-left ion-button (click)='nextcambio()' type="button" name="button">Registrar Usuario 
+   </button>
+</div>
+
+<!--
+  <button ion-button icon-right>
+  <ion-icon name="contact"></ion-icon>
+   </button>
+  <button ion-button block (click)="Perfilar()" type="button" name="contact"> Crear Perfil
+   </button>
+-->
+
+</ion-content>
