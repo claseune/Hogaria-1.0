@@ -1,20 +1,30 @@
 .page-home {
+background-image: url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-46.jpg);
+ opacity: .9;
+ 
 .btn-container{
-  width: 50%;
+  width: 40%;
   margin: 0px auto;
   position: relative;
   display: block;
-  padding: 40px
+  padding: 30px
 }
-  button{color:#FFFF00;
+.item-md {
+  background-color: white;
+  opacity: .4;
+  
+}
+.Cambios{
+  width:30%;
+  display:block;
+  margin: 0px auto;
+  }
+  button{color:#2F0B3A;
   }
   button span{
     text-transform: capitalize;
   }
-    .prueba button {
-      color: white;
-      background-image: url(http://cdn.memegenerator.es/imagenes/memes/full/0/0/4.jpg);
-    }
+    
   .button-md{
 
   }
