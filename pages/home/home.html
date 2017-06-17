@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Hogaria, Encuentra Tu Hogar
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="page-home" padding>
+  Bienvenido a Hogaria
+
+  <form [(formGroup)]="data" #loginForm="ngForm" id="login-form">
+    <ion-list inset>
+      Inicia Sesiòn y encuentra tu hogar ideal!
+      <ion-item>
+        <ion-label  >Correo</ion-label>
+        <ion-input formControlName="username" type="email"> </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label >Password</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+
+
+
+
+
+  <div class="btn-container">
+    <button ion-button color="light" block (click)="login()" form="login-form" id="login-form" icon-right>Login
+     <ion-icon name="log-in"></ion-icon>
+      </button>
+    <button class="btn-right" float-right ion-button color="light" icon-right> Acceder
+     <ion-icon name="arrow-dropright"></ion-icon>
+      </button>
+    <button class="btn-left" float-left ion-button color="light" (click)='nextcambio()' type="button" name="button" icon-right>Registrar Usuario 
+     <ion-icon name="contacts"></ion-icon>
+      </button>
+  </div>
+
+
+  <div class="Cambios">
+    <button ion-button color="light" block (click)="Perfilar()" type="button" name="contact" icon-right> Perfilar
+     <ion-icon name="navigate"></ion-icon>
+   </button>
+  </div>
+
+  <form [(formGroup)]="formexdata" #formejemplo="ngForm" id="formejemplo">
+    <ion-item>
+      <ion-label fixed>Nombre Completo</ion-label>
+      <ion-input formControlName="name" type="text" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Genero</ion-label>
+      <ion-select formControlName="gender">
+        <ion-option value="f">Female</ion-option>
+        <ion-option value="m">Male</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Comida Favorita</ion-label>
+      <ion-select formControlName="hobby">
+        <ion-option value="z">Pizza</ion-option>
+        <ion-option value="P">Hot-Dog</ion-option>
+        <ion-option value="h">Hamburguesa</ion-option>
+      </ion-select>
+    </ion-item>
+    <button ion-button color="light" block (click)="guardarForm()" form="formexdata" id="formejemplo" icon-right>Guardado </button>
+  </form>
+
+  <ion-list>
+    <button ion-item *ngFor=" let record of records | async">
+       <ion-avatar item-start>
+         <img src="assets/img/agente.jpg">
+      </ion-avatar>
+      <h2>{{record.name}}</h2>
+      <h3>{{record.gender}}</h3>
+      <p>{{record.hobby}}</p>
+     </button>
+  </ion-list>
+
+
+
+</ion-content>
