@@ -1,5 +1,5 @@
 <!--
-  Generated template for the HogariaPg2Page page.
+  Generated template for the ResultadosPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,40 +7,16 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-title>HogariaPg2</ion-title>
+        <ion-title>Resultados</ion-title>
     </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <h1>Hello </h1>
-
-
-
-
-    <div class="btn-container">
-        <button ion-button color="light" block (click)="login()" form="login-form" id="login-form" icon-right>Login
-     <ion-icon name="log-in"></ion-icon>
-      </button>
-        <button class="btn-right" float-right ion-button color="light" icon-right> Acceder
-     <ion-icon name="arrow-dropright"></ion-icon>
-      </button>
-        <button class="btn-left" float-left ion-button color="light" (click)='nextcambio()' type="button" name="button" icon-right>Registrar Usuario 
-     <ion-icon name="contacts"></ion-icon>
-      </button>
-    </div>
-
-
-
-    <div class="Cambios">
-        <button ion-button color="light" block (click)="Perfilar()" type="button" name="contact" icon-right> Perfilar
-     <ion-icon name="navigate"></ion-icon>
-   </button>
-    </div>
 
     <form [(formGroup)]="formexdata" #formejemplo="ngForm" id="formejemplo">
-        <ion-item>
+       <ion-item>
             <ion-label fixed>Ciudad</ion-label>
             <ion-input formControlName="name" type="text" value=""></ion-input>
         </ion-item>
@@ -63,7 +39,8 @@
     </form>
 
     <ion-list>
-        <button ion-item *ngFor=" let record of records | async">
+        <ion-item-sliding>
+        <button ion-item *ngFor=" let record of lista ">
        <ion-avatar item-start>
          <img src="assets/img/agente.jpg">
       </ion-avatar>
@@ -71,17 +48,8 @@
       <h3>{{record.gender}}</h3>
       <p>{{record.hobby}}</p>
      </button>
-    </ion-list>
 
-    <ion-list>
-        <ion-item-sliding>
-
-            <ion-item>
-                <ion-avatar item-start>
-                    <img src="assets/img/agente.jpg">
-                </ion-avatar>
-                <h2>Slimer</h2>
-            </ion-item>
+     
 
 
             <ion-item-options side="left">
@@ -101,12 +69,12 @@
 
 
         </ion-item-sliding>
+    </ion-list>
+
+    <ion-list>
+        
 
     </ion-list>
-    -->
-
-
-
 
 
 

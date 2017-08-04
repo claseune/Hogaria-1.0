@@ -4,12 +4,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {HogariaPg2Page} from '../pages/hogaria-pg2/hogaria-pg2';
 import { HomePage } from '../pages/home/home';
-import {PerfilPage} from '../pages/perfil/perfil';
+import { PerfilPage } from '../pages/perfil/perfil';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = PerfilPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

@@ -1,36 +1,36 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ToastController, ModalController, AlertController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-/**
- * Generated class for the HogariaPg2Page page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { PerfilPage } from '../perfil/perfil';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { BusquedaPage } from '../busqueda/busqueda';
+import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
+import { ResultadosPage } from '../resultados/resultados';
 @Component({
   selector: 'page-hogaria-pg2',
   templateUrl: 'hogaria-pg2.html',
 })
 export class HogariaPg2Page {
-  private registerData: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder:FormBuilder) {
-  this.registerData = this.formBuilder.group({
-      registerMail: ['', Validators.required],
-      registerPass: ['', Validators.required]
-})
-  }
+  private data: FormGroup;
+  private formexdata: FormGroup;
 
-register() {
+  //nuevo
+  info: any;
+  records: FirebaseListObservable<any>;
 
-    firebase.auth().createUserWithEmailAndPassword( this.registerData.controls['registerMail'].value, this.registerData.controls['registerPass'].value)
-    .then((response) => {
-      console.log(response)    
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+  constructor(public navCtrl: NavController, public formBuilder: FormBuilder,
+    public toastCtrl: ToastController, public modalCtrl: ModalController, public alertCtrl: AlertController, db: AngularFireDatabase, afDB: AngularFireDatabase, private afAuth: AngularFireAuth) {
+
+    //nuevo
+    this.records = db.list('/usuarios');
+    this.formexdata = this.formBuilder.group
+      ({
+        name: ['', Validators.required],
+        gender: ['', Validators.required],
+        hobby: ['', Validators.required]
+      })
   }
 
   ionViewDidLoad() {

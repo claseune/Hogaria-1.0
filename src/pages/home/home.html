@@ -1,34 +1,44 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Hogaria, Encuentra Tu Hogar
-    </ion-title>
+    <ion-navbar>
+        <ion-title>
+            Hogaria, Encuentra Tu Hogar
+        </ion-title>
 
-  </ion-navbar>
+    </ion-navbar>
 </ion-header>
 
 <ion-content class="page-home" padding>
-  Bienvenido a Hogaria
-
-  <form [(formGroup)]="data" #loginForm="ngForm" id="login-form">
-    <ion-list inset>
-      Inicia Sesiòn y encuentra tu hogar ideal!
+    <h2> Bienvenido {{displayName}} a Hogaria</h2>
+    <h1>Inicia Sesión con tu perfil de facebook</h1>
+    <h3></h3>
+    <ion-item class="botonfb" (click)="signInWithFacebook()">
+        <img src="assets/img/fb.png" />
+    </ion-item>
+    <button  ion-button color="light" block (click)="signOut()"> Cerrar Sesión
+     <ion-icon name="navigate"></ion-icon>
+   </button>
+    <!-- 
+    <form [(formGroup)]="data" #loginForm="ngForm" id="login-form">
+        <ion-list inset>
+            Inicia Sesiòn y encuentra tu hogar ideal!
+           
       <ion-item>
-        <ion-label  >Correo</ion-label>
+        <ion-label>Correo</ion-label>
         <ion-input formControlName="username" type="email"> </ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label >Password</ion-label>
+        <ion-label>Password</ion-label>
         <ion-input formControlName="password" type="password"></ion-input>
       </ion-item>
     </ion-list>
-  </form>
+    
+    </form>
+  -->
 
 
 
-
-
+    <!--  
   <div class="btn-container">
     <button ion-button color="light" block (click)="login()" form="login-form" id="login-form" icon-right>Login
      <ion-icon name="log-in"></ion-icon>
@@ -40,6 +50,7 @@
      <ion-icon name="contacts"></ion-icon>
       </button>
   </div>
+
 
 
   <div class="Cambios">
@@ -69,7 +80,6 @@
       </ion-select>
     </ion-item>
     <button ion-button color="light" block (click)="guardarForm()" form="formexdata" id="formejemplo" icon-right>Guardado </button>
-
   </form>
 
   <ion-list>
@@ -83,6 +93,37 @@
      </button>
   </ion-list>
 
+<ion-list>
+  <ion-item-sliding>
+    
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/img/agente.jpg">
+      </ion-avatar>
+      <h2>Slimer</h2>
+    </ion-item>
+
+
+    <ion-item-options side="left">
+      <button ion-button color="primary">
+        <ion-icon name="create"></ion-icon>
+        Editar
+      </button>
+          </ion-item-options>
+
+
+    <ion-item-options side="right">
+      <button (click)="eliminar(record.$key)" ion-button color="primary">
+        <ion-icon name="trash"></ion-icon>
+        Eliminar
+      </button>
+    </ion-item-options>
+
+
+  </ion-item-sliding>
+
+</ion-list>
+-->
 
 
 </ion-content>

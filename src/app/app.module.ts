@@ -13,6 +13,10 @@ import {PerfilPage} from '../pages/perfil/perfil';
 import * as firebase from 'firebase';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule, AngularFireDatabase,FirebaseListObservable} from 'angularfire2/database'
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { AngularFireAuthModule } from 'angularfire2/auth'; 
+import { BusquedaPage } from '../pages/busqueda/busqueda';
+import { ResultadosPage } from '../pages/resultados/resultados';
 
 export const config={
   apiKey: "AIzaSyAHay5KuVATFgdRmcXI6f1RgHmf0o1noPg",
@@ -30,25 +34,31 @@ firebase.initializeApp(config)
     MyApp,
     HomePage,
     HogariaPg2Page,
-    PerfilPage
+    PerfilPage,
+    BusquedaPage,
+    ResultadosPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(config)
+    AngularFireModule.initializeApp(config),
+     AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     HogariaPg2Page,
-    PerfilPage
+    PerfilPage,
+    BusquedaPage,
+    ResultadosPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthServiceProvider
   ]
 })
 export class AppModule {}
